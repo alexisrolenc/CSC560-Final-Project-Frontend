@@ -1,0 +1,67 @@
+@import '../../../main-styles.scss';
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.movies-list{
+    margin-top: 35px;
+    h1{
+        margin-bottom: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        color: $blue;
+    }
+
+    app-movie-card{
+        display: block;
+        margin-bottom: 25px;
+    }
+}
+
+.books-list{
+    margin-top: 35px;
+    h1{
+        margin-bottom: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        color: $blue;
+    }
+
+    app-book-card{
+        display: block;
+        margin-bottom: 25px;
+    }
+}
+
+.hobbies-list{
+    margin-top: 35px;
+    h1{
+        margin-bottom: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        color: $blue;
+    }
+
+    app-hobby-card{
+        display: block;
+        margin-bottom: 25px;
+    }
+}
+
+.floating-add-button{
+    width: 300px;
+    border-radius: 50;
+    margin: auto;
+    box-shadow: 0px 0px 15px 5px rgba($purple, 0.2);
+    height: 50px;
+    font-size: 24px;
+}
+
+.bottom-button{
+    margin-bottom: 50px;
+}

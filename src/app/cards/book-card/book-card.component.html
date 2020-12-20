@@ -1,0 +1,39 @@
+<div #container class="book-card-container">
+    <a [routerLink]="link">
+        <div class="book-card-content">
+            <h2 class="book-title">{{ title }}</h2>
+            <label class="label">
+                <p>
+                    Author:
+                </p>
+                <div class="book-card-author">
+                    {{ author }}
+                </div>
+            </label>
+            <label class="label">
+                <p>
+                    My Rating:
+                </p>
+                <div class="book-card-my-rating">
+                    {{ myRating }}
+                </div>
+            </label>
+            <label class="label">
+                <p>
+                    Description:
+                </p>
+                <div class="book-card-description">
+                    <p>
+                        {{ description }}
+                    </p>
+                    <!-- <div class="fade-out-truncation"></div> -->
+                </div>
+            </label>
+        </div>
+    </a>
+    <div class="x-button">
+        <span class="icon is-left">
+            <i class="fas fa-eraser"></i>
+        </span>
+    </div>
+</div>

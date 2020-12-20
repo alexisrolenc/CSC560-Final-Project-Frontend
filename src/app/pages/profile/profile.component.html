@@ -1,0 +1,47 @@
+<div class="main-container">
+    <div class="search-bar-container">
+        <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Search">
+              <span class="icon is-small is-left">
+                <i class="fas fa-search"></i>
+              </span>
+            </p>
+        </div>
+    </div>
+    <div class="movies-list">
+        <h1>Favorite Movies</h1>
+        <app-movie-card 
+            *ngFor="let movie of movies" 
+            [link]="['/movie', movie._id]"
+            [title]="movie.title" 
+            [director]="movie.director" 
+            [length]="movie.length" 
+            [myRating]="movie.myRating" 
+            [description]="movie.description">
+        </app-movie-card>
+    </div>
+    <button class="button floating-add-button is-primary" routerLink="movie">Add Movie</button>
+    <div class="books-list">
+        <h1>Favorite Books</h1>
+        <app-book-card 
+            *ngFor="let book of books" 
+            [link]="['/book', book._id]"
+            [title]="book.title" 
+            [author]="book.author" 
+            [myRating]="book.myRating" 
+            [description]="book.description">
+        </app-book-card>
+    </div>
+    <button class="button floating-add-button is-primary" (click)="addBook()" routerLink="book">Add Book</button>    
+    <div class="hobbies-list">
+        <h1>Hobbies</h1>
+        <app-hobby-card 
+            *ngFor="let hobby of hobbies" 
+            [link]="['/hobby', hobby._id]"
+            [title]="hobby.title" 
+            [indoorOutdoor]="hobby.indoorOutdoor">
+        </app-hobby-card>
+    </div>
+    <button class="button bottom-button floating-add-button is-primary" (click)="addHobby()" routerLink="hobby">Add Hobby</button>
+</div>

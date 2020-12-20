@@ -1,0 +1,47 @@
+<div #container class="movie-card-container">
+    <a [routerLink]="link">
+        <div class="movie-card-content">
+            <h2 class="movie-title">{{ title }}</h2>
+            <label class="label">
+                <p>
+                    Director:
+                </p>
+                <div class="movie-card-director">
+                    {{ director }}
+                </div>
+            </label>
+            <label class="label">
+                <p>
+                    Length:
+                </p>
+                <div class="movie-card-length">
+                    {{ length }}
+                </div>
+            </label>
+            <label class="label">
+                <p>
+                     My Rating:
+                </p>
+                <div class="movie-card-my-rating">
+                    {{ myRating }}
+                </div>
+            </label>
+            <label  class="label">
+                <p>
+                    Description:
+                </p>
+                <div class="movie-card-description">
+                    <p>
+                        {{ description }}
+                    </p>
+                <!-- <div #truncator class="fade-out-truncation"></div> -->
+                </div>
+            </label>
+        </div>
+    </a>
+    <div class="x-button">
+        <span class="icon is-left">
+            <i class="fas fa-eraser"></i>
+        </span>
+    </div>
+</div>

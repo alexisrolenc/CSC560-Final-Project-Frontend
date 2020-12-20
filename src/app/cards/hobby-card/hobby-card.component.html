@@ -1,0 +1,20 @@
+<div #container class="hobby-card-container">
+    <a [routerLink]="link">
+        <div class="hobby-card-content">
+            <h2 class="hobby-title">{{ title }}</h2>
+            <label class="label">
+                <p>
+                    Indoor or Outdoor:
+                </p>
+                <div class="hobby-card-indoor-outdoor">
+                    {{ indoorOutdoor }}
+                </div>
+            </label>
+        </div>
+        <div class="x-button">
+            <span class="icon is-left">
+                <i class="fas fa-eraser"></i>
+            </span>
+        </div>
+    </a>
+</div>
