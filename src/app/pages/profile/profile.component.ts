@@ -54,7 +54,5 @@ export class ProfileComponent implements OnInit {
       this.ngOnInit(); //have to force reload to make deleted object no longer render
       console.log(hobby);
     });
-
-    this.router.navigate(['/']); 
   }
 }
