@@ -18,16 +18,16 @@ export class BookDetailsComponent implements OnInit {
   constructor(private booksService: BooksService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.book = new Book();
-      if (params.id) {
-        this.bookId = params.id;
-        const returnedBook = this.booksService.getOneBook(params.id);
-        console.log(returnedBook);
-        this.new = false;
-      } else {
-        this.new = true;
-      }
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.book = new Book();
+        if (params._id) {
+          this.bookId = params._id;
+          this.getOneBook(this.bookId);
+          this.new = false;
+       } else {
+          this.new = true;
+       }
     });
   }
 
@@ -41,13 +41,20 @@ export class BookDetailsComponent implements OnInit {
   }
 
   addBook(newBook) {
-    this.booksService.addBook(newBook).subscribe((book: any) => {
+    this.booksService.addBook(newBook).subscribe((book: Book) => {
       console.log(book);
     });
   }
 
   updateBook(id, title, author,  myRating, description) {
     this.booksService.updateBook(id, title, author, myRating, description).subscribe((book: any) => {
+      console.log(book);
+    });
+  }
+
+  getOneBook(id) {
+    this.booksService.getOneBook(id).subscribe((book: Book) => {
+      this.book = book;
       console.log(book);
     });
   }

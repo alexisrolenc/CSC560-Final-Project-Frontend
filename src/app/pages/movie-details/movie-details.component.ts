@@ -22,11 +22,11 @@ export class MovieDetailsComponent implements OnInit {
       (params: Params) => {
         this.movie = new Movie();
         if (params._id) {
-        this.movieId = params._id;
-        this.getOneMovie(this.movieId);
-        this.new = false;
+          this.movieId = params._id;
+          this.getOneMovie(this.movieId);
+          this.new = false;
       } else {
-        this.new = true;
+          this.new = true;
       }
     });
   }

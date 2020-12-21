@@ -1,21 +1,23 @@
 <div class="form-container">
         <form #bookDetailsForm="ngForm" (ngSubmit)="onSubmit(bookDetailsForm)">
-            <div class="field">
-                <label class="label">Title</label>
-                <div class="control">
-                    <input type="text" name="title" [ngModel]="book.title" required class="input">
+            <div class="flex-style">
+                <div class="field">
+                    <label class="label">Title</label>
+                    <div class="control">
+                        <input type="text" name="title" [ngModel]="book.title" required class="input small-field">
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <label class="label">Author</label>
-                <div class="control">
-                    <input type="text" name="author" [ngModel]="book.author" class="input">
+                <div class="field">
+                    <label class="label">Author</label>
+                    <div class="control">
+                        <input type="text" name="author" [ngModel]="book.author" class="input small-field">
+                    </div>
                 </div>
             </div>
             <div class="field">
                 <label class="label">My Rating</label>
                 <div class="control">
-                    <input type="text" name="myRating" [ngModel]="book.myRating" class="input">
+                    <input type="text" name="myRating" [ngModel]="book.myRating" class="input small-field">
                 </div>
             </div>
             <div class="field">

@@ -1,27 +1,31 @@
 <div class="form-container">
     <form #movieDetailsForm="ngForm" (ngSubmit)="onSubmit(movieDetailsForm)">
-        <div class="field">
-            <label class="label">Title</label>
-            <div class="control">
-                <input type="text" name="title" [ngModel]="movie.title" required class="input">
+        <div class="flex-style">
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input type="text" name="title" [ngModel]="movie.title" required class="input small-field">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Director</label>
+                <div class="control">
+                    <input type="text" name="director" [ngModel]="movie.director" class="input small-field">
+                </div>
             </div>
         </div>
-        <div class="field">
-            <label class="label">Director</label>
-            <div class="control">
-                <input type="text" name="director" [ngModel]="movie.director" class="input">
+        <div class="flex-style">
+            <div class="field">
+                <label class="label">Length</label>
+                <div class="control">
+                    <input type="text" name="length" [ngModel]="movie.length" class="input small-field">
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <label class="label">Length</label>
-            <div class="control">
-                <input type="text" name="length" [ngModel]="movie.length" class="input">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">My Rating</label>
-            <div class="control">
-                <input type="text" name="myRating" [ngModel]="movie.myRating" class="input">
+            <div class="field">
+                <label class="label">My Rating</label>
+                <div class="control">
+                    <input type="text" name="myRating" [ngModel]="movie.myRating" class="input small-field">
+                </div>
             </div>
         </div>
         <div class="field">

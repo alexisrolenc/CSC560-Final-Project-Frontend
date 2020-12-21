@@ -21,6 +21,20 @@ input, textarea {
     }
 }
 
+.label{
+    color: $blue;
+}
+
 .cancel-button{
     background-color: $blue;
+}
+
+.small-field{
+    width: 350px;
+}
+
+.flex-style{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

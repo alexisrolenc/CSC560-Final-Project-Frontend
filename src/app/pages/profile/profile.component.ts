@@ -5,6 +5,7 @@ import { Hobby } from 'src/app/shared/hobby.model';
 import { MoviesService } from 'src/app/shared/movies.service';
 import { HobbiesService } from 'src/app/shared/hobbies.service';
 import { BooksService } from 'src/app/shared/books.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +18,7 @@ export class ProfileComponent implements OnInit {
   books!: Book[];
   hobbies!: Hobby[];
 
-  constructor(private moviesService: MoviesService, private booksService: BooksService, private hobbiesService: HobbiesService) { }
+  constructor(private moviesService: MoviesService, private booksService: BooksService, private hobbiesService: HobbiesService, private router: Router) { }
 
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe((movies: any) => {
@@ -34,22 +35,26 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  addBook() {
-    const newBook = {
-      title: "Test",
-      author: "tester",
-      myRating: "123",
-      description: "testing testing 123"
-    }
-    this.booksService.addBook(newBook);
+  deleteMovie(id: string) {
+    this.moviesService.deleteMovie(id).subscribe((movie: Movie) => {
+      this.ngOnInit(); //have to force reload to make deleted object no longer render
+      console.log(movie);
+    });
   }
 
-  addHobby() {
-    const newHobby = {
-      title: "Test",
-      indoorOutdoor: "indoor"
-    }
-    this.hobbiesService.addHobby(newHobby);
+  deleteBook(id: string) {
+    this.booksService.deleteBook(id).subscribe((book: Book) => {
+      this.ngOnInit(); //have to force reload to make deleted object no longer render
+      console.log(book);
+    });
   }
 
+  deleteHobby(id: string) {
+    this.hobbiesService.deleteHobby(id).subscribe((hobby: Hobby) => {
+      this.ngOnInit(); //have to force reload to make deleted object no longer render
+      console.log(hobby);
+    });
+
+    this.router.navigate(['/']); 
+  }
 }

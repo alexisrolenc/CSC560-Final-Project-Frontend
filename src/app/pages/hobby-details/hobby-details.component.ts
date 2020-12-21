@@ -19,15 +19,15 @@ export class HobbyDetailsComponent implements OnInit {
   constructor(private hobbiesService: HobbiesService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.hobby = new Hobby();
-      if (params.id) {
-        this.hobbyId = params.id;
-        const returnedHobby = this.hobbiesService.getOneHobby(params.id);
-        console.log(returnedHobby);
-        this.new = false;
-      } else {
-        this.new = true;
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.hobby = new Hobby();
+        if (params._id) {
+          this.hobbyId = params._id;
+          this.getOneHobby(this.hobbyId);
+          this.new = false;
+        } else {
+          this.new = true;
       }
     });
   }
@@ -49,6 +49,13 @@ export class HobbyDetailsComponent implements OnInit {
 
   updateHobby(id, title, indoorOutdoor) {
     this.hobbiesService.updateHobby(id, title, indoorOutdoor).subscribe((hobby: any) => {
+      console.log(hobby);
+    });
+  }
+
+  getOneHobby(id) {
+    this.hobbiesService.getOneHobby(id).subscribe((hobby: Hobby) => {
+      this.hobby = hobby;
       console.log(hobby);
     });
   }
